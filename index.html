@@ -49,6 +49,7 @@
     <h2>Search by name</h2>
     <input type="text" id="myInput" onkeyup="myFunction()" placeholder="...">
     <h2>or filter by category</h2>
+    <button onclick="metaScroll()">Meta Scroll</button>
      <a href="#met"><button>Metabolic</button></a>
     <a href="#sys"><button>Sysmex</button></a>
   <a href="#path"><button>Pathfast</button></a>
@@ -570,5 +571,10 @@
             a[i].classList.toggle("hidden");
         }
     }
+
+        function metaScroll() {
+            const ms = document.getElementById("met");
+            ms.scrollIntoView();
+        }
 </script>
 </html>
