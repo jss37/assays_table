@@ -49,17 +49,16 @@
     <h2>Search by name</h2>
     <input type="text" id="myInput" onkeyup="myFunction()" placeholder="...">
     <h2>or filter by category</h2>
-    <button onclick="metaScroll()">Meta Scroll</button>
-     <a href="#met"><button>Metabolic</button></a>
-    <a href="#sys"><button>Sysmex</button></a>
-  <a href="#path"><button>Pathfast</button></a>
-    <a href="#elis"><button>ELISA</button></a>
+    <button onclick="metaScroll()">Metabolic</button>
+    <button onclick="sysScroll()">Sysmex</button>
+    <button onclick="pathScroll()">Pathfast</button>
+    <button onclick="elisScroll()">ELISA</button>
     <br>
-    <a href="#MIA"><button>Multiplexed Immuno Assays</button></a><br>
-    <a href="#viral"><button>Viral</button></a>
-    <a href="#cyto"><button>Cytokine</button></a>
-    <a href="#chem"><button>Chemokine</button></a>
-    <a href="#neuro"><button>Neuroinflammation</button></a>
+    <button onclick="miaScroll()">Multiplexed Immuno Assays</button><br>
+    <button onclick="viralScroll()">Viral</button>
+    <button onclick="cytoScroll()">Cytokine</button>
+    <button onclick="chemScroll()">Chemokine</button>
+    <button onclick="neuroScroll()">Neuroinflammation</button>
     <table id="myTable">
         <th>Category</th>
         <th>Variable</th>
@@ -575,6 +574,44 @@
         function metaScroll() {
             const ms = document.getElementById("met");
             ms.scrollIntoView();
+        }
+        
+        function sysScroll() {
+            const ss = document.getElementById("sys");
+            ss.scrollIntoView();
+        }
+        function pathScroll() {
+            const ps = document.getElementById("path");
+            ps.scrollIntoView();
+        }
+        function elisScroll() {
+            const es = document.getElementById("elis");
+            es.scrollIntoView();
+        }
+
+        function miaScroll() {
+            const mis = document.getElementById("MIA");
+            mis.scrollIntoView();
+        }
+
+        function viralScroll() {
+            const vs = document.getElementById("viral");
+            vs.scrollIntoView();
+        }
+
+        function cytoScroll() {
+            const cs = document.getElementById("cyto");
+            cs.scrollIntoView();
+        }
+
+        function chemScroll () {
+            const cms = document.getElementById("chem");
+            cms.scrollIntoView();
+        }
+
+        function neuroScroll() {
+            const ns = document.getElementById("neuro");
+            ns.scrollIntoView();
         }
 </script>
 </html>
