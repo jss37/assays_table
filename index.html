@@ -1,21 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
     <title>Assays Table</title>
     <style>
         body {
             text-align: center;
+            font-family: "Lato", sans-serif;
         }
         button {
-            background-color: lightgray;
-            border: 1px solid rgb(26, 123, 123);
-            font-size: 1.2vw;
+            background-color: #0c5449;
+            color: white;
+            border: 1px solid #0c5449;
+            border-radius: 5px;
+            font-size: 1vw;
+            padding-left: 3vw;
+            padding-right: 3vw;
+            padding-bottom: .2vw;
+            padding-top: .2vw;
+            margin-bottom: .2vw;
+            font-weight: bold;
         }
         button:hover {
-            background-color: azure;
-            color: black;
+            background-color: #0a453c;
+            color: white;
             font-weight: bold;
+            cursor: pointer;
         }
         table {
             text-align: center;
@@ -62,484 +72,490 @@ tr:nth-child(odd) {
             border: 3px solid rgb(26, 123, 123);
         }
     </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h2>Search by name</h2>
-    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="...">
-    <h2>or filter by category</h2>
-    <button onclick="metaScroll()">Metabolic</button>
-    <button onclick="sysScroll()">Sysmex</button>
-    <button onclick="pathScroll()">Pathfast</button>
-    <button onclick="elisScroll()">ELISA</button>
-    <br>
-    <button onclick="miaScroll()">Multiplexed Immuno Assays</button><br>
-    <button onclick="viralScroll()">Viral</button>
-    <button onclick="cytoScroll()">Cytokine</button>
-    <button onclick="chemScroll()">Chemokine</button>
-    <button onclick="neuroScroll()">Neuroinflammation</button>
-    <table id="myTable">
-        <th>Category</th>
-        <th>Variable</th>
-        <tr class="meta" id="met">
-            <td>Metabolics</td>
-            <td>Albumin (ALB)</td>
-        </tr>
-        <tr class="meta">
-            <td>Metabolics</td>
-            <td>Alkaline Phosphatase (ALP)</td>
-        </tr>
-        <tr class="meta">
-            <td>Metabolics</td>
-            <td>Alanine-Aminotransferase (ALT)</td>
-        </tr>
-        <tr class="meta">
-            <td>Metabolics</td>
-            <td>Amylase (AMY)</td>
-        </tr>
-        <tr class="meta">
-            <td>Metabolics</td>
-            <td>Aspartate-Aminotransferase (AST)</td>
-        </tr>
-        <tr class="meta">
-            <td>Metabolics</td>
-            <td>Direct Bilirubin (DBIL)</td>
-        </tr>
-          <tr class="meta">
-            <td>Metabolics</td>
-            <td>Total Bilirubin (TBIL)</td>
-        </tr>
-        <tr class="meta">
-            <td>Metabolics</td>
-            <td>Blood Urea Nitrogen (BUN)</td>
-        </tr>
-        <tr class="meta">
-            <td>Metabolics</td>
-            <td>Calcium (Ca)</td>
-        </tr>
-         <tr class="meta">
-            <td>Metabolics</td>
-            <td>Creatine Kinase (CK)</td>
-        </tr>
-        <tr class="meta">
-            <td>Metabolics</td>
-            <td>Chloride (Cl)</td>
-        </tr>
-        <tr class="meta">
-            <td>Metabolics</td>
-            <td>Creatine (CRE)</td>
-        </tr>
-        <tr class="meta">
-            <td>Metabolics</td>
-            <td>C-Reactive Protein (CRP)</td>
-        </tr>
-        <tr class="meta">
-            <td>Metabolics</td>
-            <td>Gamma-Glutamyl-Transferase (GGT)</td>
-        </tr>
-        <tr class="meta">
-            <td>Metabolics</td>
-            <td>Glucose (Glu)</td>
-        </tr>
-        <tr class="meta">
-            <td>Metabolics</td>
-            <td>Potassium (K)</td>
-        </tr>
-        <tr class="meta">
-            <td>Metabolics</td>
-            <td>Lactate (LAC)</td>
-        </tr>
-        <tr class="meta">
-            <td>Metabolics</td>
-            <td>Lactate-Dehyrogenase (LDH)</td>
-        </tr>
-        <tr class="meta">
-            <td>Metabolics</td>
-            <td>Magnesium (Mg)</td>
-        </tr>
-        <tr class="meta">
-            <td>Metabolics</td>
-            <td>Sodium (Na)</td>
-        </tr>
-        <tr class="meta">
-            <td>Metabolics</td>
-            <td>Phosphorus (Phos)</td>
-        </tr>
-        <tr class="meta">
-            <td>Metabolics</td>
-            <td>Total Bicarbonate (tCO<sub>2</sub>)</td>
-        </tr>
-        <tr class="meta">
-            <td>
-                Metabolics
-            </td>
-            <td>Total Protein (TP)</td>
-        </tr>
-        <tr class="meta">
-            <td>
-                Metabolics
-            </td>
-            <td>
-                Uric Acid (UA)
-            </td>
-        </tr>
-        <tr class="meta">
-        <td>Metabolics</td>
-        <td>Cholestoral (CHOL)</td>
-            </tr>
-        <tr class="meta">
-            <td>Metabolics</td>
-            <td>High Density Lipo Protein (HDL)</td>
-        </tr>
-        <tr class="meta">
-            <td>Metabolics</td>
-            <td>CHOL/HDL</td>
-        </tr>
-        <tr class="meta">
-            <td>Metabolics</td>
-            <td>non-HDL</td>
-        </tr>
-        <tr class="meta">
-            <td>Metabolics</td>
-            <td>Low Density Lipo Protein (LDL)</td>
-        </tr>
-        <tr class="meta">
-            <td>Metabolics</td>
-            <td>Triglycerides (TRIG)</td>
-        </tr>
-        <tr class="meta">
-            <td>Metabolics</td>
-            <td>Very Low Density Lipo Protein (VLDL)</td>
-        </tr>
-        <tr>
-            <td>????</td>
-            <td>HbA1c (Afinion 2)</td>
-        </tr>
-        <tr class="sysmex" id="sys">
-            <td>Complete Blood Count <br>plus Differential (Sysmex)</td>
-            <td>White Blood Cell (WBC)</td>
-        </tr>
-        <tr class="sysmex">
-            <td>Complete Blood Count <br>plus Differential (Sysmex)</td>
-            <td>Red Blood Cell (RBC)</td>
-        </tr>
-        <tr class="sysmex">
-            <td>Complete Blood Count <br>plus Differential (Sysmex)</td>
-            <td>Hemoglobin (HGB)</td>
-        </tr>
-        <tr class="sysmex">
-            <td>Complete Blood Count <br>plus Differential (Sysmex)</td>
-            <td>Hematocrit (HCT)</td>
-        </tr>
-        <tr class="sysmex">
-            <td>Complete Blood Count <br>plus Differential (Sysmex)</td>
-            <td>Mean Corpuscular Volume (MCV)</td>
-        </tr>
-         <tr class="sysmex">
-            <td>Complete Blood Count <br>plus Differential (Sysmex)</td>
-            <td>Mean Corpuscular Hemoglobin (MCH)</td>
-        </tr>
-        <tr class="sysmex">
-           <td>Complete Blood Count <br>plus Differential (Sysmex)</td>
-            <td>Mean Corpuscular Hemoglobin Concentration (MCHC)</td>
-        </tr>
-        <tr class="sysmex">
-           <td>Complete Blood Count <br>plus Differential (Sysmex)</td>
-            <td>Red Cell Distribution Width-Standard Deviation (RDW-SD)</td>
-        </tr>
-         <tr class="sysmex">
-           <td>Complete Blood Count <br>plus Differential (Sysmex)</td>
-            <td>Red Cell Distribution Width-Coefficient of Variation (RDW-CV)</td>
-        </tr>
-         <tr class="sysmex">
-           <td>Complete Blood Count <br>plus Differential (Sysmex)</td>
-            <td>Platelet Count (PLT)</td>
-        </tr>
-         <tr class="sysmex">
-           <td>Complete Blood Count <br>plus Differential (Sysmex)</td>
-            <td>Mean Platelet Volume (MPV)</td>
-        </tr>
-         <tr class="sysmex">
-           <td>Complete Blood Count <br>plus Differential (Sysmex)</td>
-            <td>Neutrophilis (NEUT)</td>
-        </tr>
-         <tr class="sysmex">
-           <td>Complete Blood Count <br>plus Differential (Sysmex)</td>
-            <td>Lymphocytes (LYMPH)</td>
-        </tr>
-         <tr class="sysmex">
-           <td>Complete Blood Count <br>plus Differential (Sysmex)</td>
-            <td>Monocytes (MONO)</td>
-        </tr>
-          <tr class="sysmex">
-           <td>Complete Blood Count <br>plus Differential (Sysmex)</td>
-            <td>Eosinophiles (EO)</td>
-        </tr>
-         <tr class="sysmex">
-           <td>Complete Blood Count <br>plus Differential (Sysmex)</td>
-            <td>Basophiles (BASO)</td>
-        </tr>
-         <tr class="sysmex">
-           <td>Complete Blood Count <br>plus Differential (Sysmex)</td>
-            <td>Immature Granulocytes (IG)</td>
-        </tr>
-        <tr class="pathfast" id="path">
-            <td>Cardiac Markers (Pathfast)</td>
-            <td>Troponin-1</td>
-        </tr>
-        <tr class="pathfast">
-            <td>Cardiac Markers (Pathfast)</td>
-            <td>Myoglobin</td>
-        </tr>
-        <tr class="pathfast">
-            <td>Cardiac Markers (Pathfast)</td>
-            <td>Creatine Kinase-MB (CK-MB)</td>
-        </tr>
-        <tr class="pathfast">
-            <td>Cardiac Markers (Pathfast)</td>
-            <td>D-Dimer</td>
-        </tr>
-        <tr class="pathfast">
-            <td>Cardiac Markers (Pathfast)</td>
-            <td>NTproBMP</td>
-        </tr>
-        <tr class="pathfast">
-            <td>Cardiac Markers (Pathfast)</td>
-            <td>HsCRP</td>
-        </tr>
-        <tr class="elisa" id="elis">
-            <td>Enzyme-Linked <br>Immunosorbent Assay (ELISA)</td>
-            <td>Heparin Sulfate (HS)</td>
-        </tr>
-         <tr class="elisa">
-            <td>Enzyme-Linked <br>Immunosorbent Assay (ELISA)</td>
-            <td>Fibinogen Gamma Chain (FGG)</td>
-        </tr>
-         <tr class="elisa">
-            <td>Enzyme-Linked <br>Immunosorbent Assay (ELISA)</td>
-            <td>Hyaluronan Synthase 1</td>
-        </tr>
-         <tr class="elisa">
-            <td>Enzyme-Linked <br>Immunosorbent Assay (ELISA)</td>
-            <td>Growth Differentiation Factor - 15 (GDF-15)</td>
-        </tr>
-         <tr class="elisa">
-            <td>Enzyme-Linked <br>Immunosorbent Assay (ELISA)</td>
-            <td>Plasminogen Activator Inhibitor-1 (PAI-1)</td>
-        </tr>
-         <tr class="elisa">
-            <td>Enzyme-Linked <br>Immunosorbent Assay (ELISA)</td>
-            <td>Pregnancy-associated plasma protein-A (PAPP-A)</td>
-        </tr>
-         <tr class="elisa">
-            <td>Enzyme-Linked <br>Immunosorbent Assay (ELISA)</td>
-            <td>Syndecan - 1 (SD-1)</td>
-        </tr>
-        
-        </table>
-        <table>
-            <h1 id="MIA">Multiplexed Immuno-Assays</h1>
-            <tr>
+    <main>
+        <h2>Search by name</h2>
+        <input type="text" id="myInput" placeholder="..."><br>
+        <button onclick="myFunction()">Search</button>
+        <h2>or filter by category</h2>
+        <a href="#met"><button>Metabolic</button></a>
+        <a href="#sys"><button>Sysmex</button></a>
+        <a href="#path"><button>Pathfast</button></a>
+        <a href="#elis"><button>ELISA</button></a>
+        <br>
+        <a href="#MIA"><button>Multiplexed Immuno Assays</button></a><br>
+        <a href="#viral"><button>Viral</button></a>
+        <a href="#cyto"><button>Cytokine</button></a>
+        <a href="#chem"><button>Chemokine</button></a>
+        <a href="#neuro"><button>Neuroinflammation</button></a>
+        <table id="myTable">
             <th>Category</th>
             <th>Variable</th>
+            <tr class="meta" id="met">
+                <td>Metabolics</td>
+                <td>Albumin (ALB)</td>
             </tr>
-            <tr id="viral">
-                <td>Viral and Proinflammatory Panels</td>
-                <td>IL-1β</td>
+            <tr class="meta">
+                <td>Metabolics</td>
+                <td>Alkaline Phosphatase (ALP)</td>
+            </tr>
+            <tr class="meta">
+                <td>Metabolics</td>
+                <td>Alanine-Aminotransferase (ALT)</td>
+            </tr>
+            <tr class="meta">
+                <td>Metabolics</td>
+                <td>Amylase (AMY)</td>
+            </tr>
+            <tr class="meta">
+                <td>Metabolics</td>
+                <td>Aspartate-Aminotransferase (AST)</td>
+            </tr>
+            <tr class="meta">
+                <td>Metabolics</td>
+                <td>Direct Bilirubin (DBIL)</td>
+            </tr>
+              <tr class="meta">
+                <td>Metabolics</td>
+                <td>Total Bilirubin (TBIL)</td>
+            </tr>
+            <tr class="meta">
+                <td>Metabolics</td>
+                <td>Blood Urea Nitrogen (BUN)</td>
+            </tr>
+            <tr class="meta">
+                <td>Metabolics</td>
+                <td>Calcium (Ca)</td>
+            </tr>
+             <tr class="meta">
+                <td>Metabolics</td>
+                <td>Creatine Kinase (CK)</td>
+            </tr>
+            <tr class="meta">
+                <td>Metabolics</td>
+                <td>Chloride (Cl)</td>
+            </tr>
+            <tr class="meta">
+                <td>Metabolics</td>
+                <td>Creatine (CRE)</td>
+            </tr>
+            <tr class="meta">
+                <td>Metabolics</td>
+                <td>C-Reactive Protein (CRP)</td>
+            </tr>
+            <tr class="meta">
+                <td>Metabolics</td>
+                <td>Gamma-Glutamyl-Transferase (GGT)</td>
+            </tr>
+            <tr class="meta">
+                <td>Metabolics</td>
+                <td>Glucose (Glu)</td>
+            </tr>
+            <tr class="meta">
+                <td>Metabolics</td>
+                <td>Potassium (K)</td>
+            </tr>
+            <tr class="meta">
+                <td>Metabolics</td>
+                <td>Lactate (LAC)</td>
+            </tr>
+            <tr class="meta">
+                <td>Metabolics</td>
+                <td>Lactate-Dehyrogenase (LDH)</td>
+            </tr>
+            <tr class="meta">
+                <td>Metabolics</td>
+                <td>Magnesium (Mg)</td>
+            </tr>
+            <tr class="meta">
+                <td>Metabolics</td>
+                <td>Sodium (Na)</td>
+            </tr>
+            <tr class="meta">
+                <td>Metabolics</td>
+                <td>Phosphorus (Phos)</td>
+            </tr>
+            <tr class="meta">
+                <td>Metabolics</td>
+                <td>Total Bicarbonate (tCO<sub>2</sub>)</td>
+            </tr>
+            <tr class="meta">
+                <td>
+                    Metabolics
+                </td>
+                <td>Total Protein (TP)</td>
+            </tr>
+            <tr class="meta">
+                <td>
+                    Metabolics
+                </td>
+                <td>
+                    Uric Acid (UA)
+                </td>
+            </tr>
+            <tr class="meta">
+            <td>Metabolics</td>
+            <td>Cholestoral (CHOL)</td>
+                </tr>
+            <tr class="meta">
+                <td>Metabolics</td>
+                <td>High Density Lipo Protein (HDL)</td>
+            </tr>
+            <tr class="meta">
+                <td>Metabolics</td>
+                <td>CHOL/HDL</td>
+            </tr>
+            <tr class="meta">
+                <td>Metabolics</td>
+                <td>non-HDL</td>
+            </tr>
+            <tr class="meta">
+                <td>Metabolics</td>
+                <td>Low Density Lipo Protein (LDL)</td>
+            </tr>
+            <tr class="meta">
+                <td>Metabolics</td>
+                <td>Triglycerides (TRIG)</td>
+            </tr>
+            <tr class="meta">
+                <td>Metabolics</td>
+                <td>Very Low Density Lipo Protein (VLDL)</td>
             </tr>
             <tr>
-                <td>Viral and Proinflammatory Panels</td>
-                <td>IL-6</td>
+                <td>????</td>
+                <td>HbA1c (Afinion 2)</td>
             </tr>
-            <tr>
-                <td>Viral and Proinflammatory Panels</td>
-                <td>IL-8</td>
+            <tr class="sysmex" id="sys">
+                <td>Complete Blood Count <br>plus Differential (Sysmex)</td>
+                <td>White Blood Cell (WBC)</td>
             </tr>
-            <tr>
-                <td>Viral and Proinflammatory Panels</td>
-                <td>TNF-α</td>
+            <tr class="sysmex">
+                <td>Complete Blood Count <br>plus Differential (Sysmex)</td>
+                <td>Red Blood Cell (RBC)</td>
             </tr>
-            <tr>
-                <td>Viral and Proinflammatory Panels</td>
-                <td>IFN-γ </td>
+            <tr class="sysmex">
+                <td>Complete Blood Count <br>plus Differential (Sysmex)</td>
+                <td>Hemoglobin (HGB)</td>
             </tr>
-            <tr>
-                <td>Viral and Proinflammatory Panels</td>
-                <td>IL-4 </td>
+            <tr class="sysmex">
+                <td>Complete Blood Count <br>plus Differential (Sysmex)</td>
+                <td>Hematocrit (HCT)</td>
             </tr>
-             <tr>
-                <td>Viral and Proinflammatory Panels</td>
-                <td>IL-10 </td>
+            <tr class="sysmex">
+                <td>Complete Blood Count <br>plus Differential (Sysmex)</td>
+                <td>Mean Corpuscular Volume (MCV)</td>
             </tr>
-             <tr>
-                <td>Viral and Proinflammatory Panels</td>
-                <td>IL-5 </td>
+             <tr class="sysmex">
+                <td>Complete Blood Count <br>plus Differential (Sysmex)</td>
+                <td>Mean Corpuscular Hemoglobin (MCH)</td>
             </tr>
-              <tr>
-                <td>Viral and Proinflammatory Panels</td>
-                <td>IL-12p70 </td>
+            <tr class="sysmex">
+               <td>Complete Blood Count <br>plus Differential (Sysmex)</td>
+                <td>Mean Corpuscular Hemoglobin Concentration (MCHC)</td>
             </tr>
-            <tr>
-                <td>Viral and Proinflammatory Panels</td>
-                <td>IL-13 </td>
+            <tr class="sysmex">
+               <td>Complete Blood Count <br>plus Differential (Sysmex)</td>
+                <td>Red Cell Distribution Width-Standard Deviation (RDW-SD)</td>
             </tr>
-              <tr>
-                <td>Viral and Proinflammatory Panels</td>
-                <td>IL-2</td>
+             <tr class="sysmex">
+               <td>Complete Blood Count <br>plus Differential (Sysmex)</td>
+                <td>Red Cell Distribution Width-Coefficient of Variation (RDW-CV)</td>
             </tr>
-            
-            <tr id="cyto">
+             <tr class="sysmex">
+               <td>Complete Blood Count <br>plus Differential (Sysmex)</td>
+                <td>Platelet Count (PLT)</td>
+            </tr>
+             <tr class="sysmex">
+               <td>Complete Blood Count <br>plus Differential (Sysmex)</td>
+                <td>Mean Platelet Volume (MPV)</td>
+            </tr>
+             <tr class="sysmex">
+               <td>Complete Blood Count <br>plus Differential (Sysmex)</td>
+                <td>Neutrophilis (NEUT)</td>
+            </tr>
+             <tr class="sysmex">
+               <td>Complete Blood Count <br>plus Differential (Sysmex)</td>
+                <td>Lymphocytes (LYMPH)</td>
+            </tr>
+             <tr class="sysmex">
+               <td>Complete Blood Count <br>plus Differential (Sysmex)</td>
+                <td>Monocytes (MONO)</td>
+            </tr>
+              <tr class="sysmex">
+               <td>Complete Blood Count <br>plus Differential (Sysmex)</td>
+                <td>Eosinophiles (EO)</td>
+            </tr>
+             <tr class="sysmex">
+               <td>Complete Blood Count <br>plus Differential (Sysmex)</td>
+                <td>Basophiles (BASO)</td>
+            </tr>
+             <tr class="sysmex">
+               <td>Complete Blood Count <br>plus Differential (Sysmex)</td>
+                <td>Immature Granulocytes (IG)</td>
+            </tr>
+            <tr class="pathfast" id="path">
+                <td>Cardiac Markers (Pathfast)</td>
+                <td>Troponin-1</td>
+            </tr>
+            <tr class="pathfast">
+                <td>Cardiac Markers (Pathfast)</td>
+                <td>Myoglobin</td>
+            </tr>
+            <tr class="pathfast">
+                <td>Cardiac Markers (Pathfast)</td>
+                <td>Creatine Kinase-MB (CK-MB)</td>
+            </tr>
+            <tr class="pathfast">
+                <td>Cardiac Markers (Pathfast)</td>
+                <td>D-Dimer</td>
+            </tr>
+            <tr class="pathfast">
+                <td>Cardiac Markers (Pathfast)</td>
+                <td>NTproBMP</td>
+            </tr>
+            <tr class="pathfast">
+                <td>Cardiac Markers (Pathfast)</td>
+                <td>HsCRP</td>
+            </tr>
+            <tr class="elisa" id="elis">
+                <td>Enzyme-Linked <br>Immunosorbent Assay (ELISA)</td>
+                <td>Heparin Sulfate (HS)</td>
+            </tr>
+             <tr class="elisa">
+                <td>Enzyme-Linked <br>Immunosorbent Assay (ELISA)</td>
+                <td>Fibinogen Gamma Chain (FGG)</td>
+            </tr>
+             <tr class="elisa">
+                <td>Enzyme-Linked <br>Immunosorbent Assay (ELISA)</td>
+                <td>Hyaluronan Synthase 1</td>
+            </tr>
+             <tr class="elisa">
+                <td>Enzyme-Linked <br>Immunosorbent Assay (ELISA)</td>
+                <td>Growth Differentiation Factor - 15 (GDF-15)</td>
+            </tr>
+             <tr class="elisa">
+                <td>Enzyme-Linked <br>Immunosorbent Assay (ELISA)</td>
+                <td>Plasminogen Activator Inhibitor-1 (PAI-1)</td>
+            </tr>
+             <tr class="elisa">
+                <td>Enzyme-Linked <br>Immunosorbent Assay (ELISA)</td>
+                <td>Pregnancy-associated plasma protein-A (PAPP-A)</td>
+            </tr>
+             <tr class="elisa">
+                <td>Enzyme-Linked <br>Immunosorbent Assay (ELISA)</td>
+                <td>Syndecan - 1 (SD-1)</td>
+            </tr>
+        
+            </table>
+            <table>
+                <h1 id="MIA">Multiplexed Immuno-Assays</h1>
+                <tr>
+                <th>Category</th>
+                <th>Variable</th>
+                </tr>
+                <tr id="viral">
+                    <td>Viral and Proinflammatory Panels</td>
+                    <td>IL-1β</td>
+                </tr>
+                <tr>
+                    <td>Viral and Proinflammatory Panels</td>
+                    <td>IL-6</td>
+                </tr>
+                <tr>
+                    <td>Viral and Proinflammatory Panels</td>
+                    <td>IL-8</td>
+                </tr>
+                <tr>
+                    <td>Viral and Proinflammatory Panels</td>
+                    <td>TNF-α</td>
+                </tr>
+                <tr>
+                    <td>Viral and Proinflammatory Panels</td>
+                    <td>IFN-γ </td>
+                </tr>
+                <tr>
+                    <td>Viral and Proinflammatory Panels</td>
+                    <td>IL-4 </td>
+                </tr>
+                 <tr>
+                    <td>Viral and Proinflammatory Panels</td>
+                    <td>IL-10 </td>
+                </tr>
+                 <tr>
+                    <td>Viral and Proinflammatory Panels</td>
+                    <td>IL-5 </td>
+                </tr>
+                  <tr>
+                    <td>Viral and Proinflammatory Panels</td>
+                    <td>IL-12p70 </td>
+                </tr>
+                <tr>
+                    <td>Viral and Proinflammatory Panels</td>
+                    <td>IL-13 </td>
+                </tr>
+                  <tr>
+                    <td>Viral and Proinflammatory Panels</td>
+                    <td>IL-2</td>
+                </tr>
+        
+                <tr id="cyto">
+                    <td>Cytokine Panels</td>
+                    <td>GM-CSF</td>
+                </tr>
+                 <tr>
+                    <td>Cytokine Panels</td>
+                    <td>IL-12/IL-23p40</td>
+                </tr>
+                <tr>
+                    <td>Cytokine Panels</td>
+                    <td>IL-12/IL-23p40</td>
+                </tr>
+                <tr>
                 <td>Cytokine Panels</td>
-                <td>GM-CSF</td>
-            </tr>
-             <tr>
-                <td>Cytokine Panels</td>
-                <td>IL-12/IL-23p40</td>
-            </tr>
-            <tr>
-                <td>Cytokine Panels</td>
-                <td>IL-12/IL-23p40</td>
-            </tr>
-            <tr>
-            <td>Cytokine Panels</td>
-            <td>IL-15</td>
-            </tr>
-            <tr>
-                <td>Cytokine Panels</td>
-                <td>IL-16</td>
-            </tr>
-            <tr>
-                <td>Cytokine Panels</td>
-                <td>IL-17A</td>
-            </tr>
-             <tr>
-                <td>Cytokine Panels</td>
-                <td>IL-1α</td>
-            </tr>
-            <tr>
-                <td>Cytokine Panels</td>
-                <td>IL-5</td>
-            </tr>
-             <tr>
-                <td>Cytokine Panels</td>
-                <td>IL-7</td>
-            </tr>
-             <tr>
-                <td>Cytokine Panels</td>
-                <td>VEGF-A</td>
-            </tr>
-            <tr>
-                <td>Cytokine Panels</td>
-                <td>IL-17A/F, B, C, D</td>
-            </tr>
-            <tr>
-                <td>Cytokine Panels</td>
-                <td>IL-1RA</td>
-            </tr>
-            <tr>
-                <td>Cytokine Panels</td>
-                <td>IL-3</td>
-            </tr>
-              <tr>
-                <td>Cytokine Panels</td>
-                <td>IL-9</td>
-            </tr>
-             <tr id="chem">
-                <td>Chemokine Panels</td>
-                <td>MCP-1</td>
-            </tr>
-             <tr>
-                <td>Chemokine Panels</td>
-                <td>MCP-4</td>
-            </tr>
-             <tr>
-                <td>Chemokine Panels</td>
-                <td>Eotaxin</td>
-            </tr>
-             <tr>
-                <td>Chemokine Panels</td>
-                <td>IP-10</td>
-            </tr>
-             <tr>
-                <td>Chemokine Panels</td>
-                <td>MDC</td>
-            </tr>
-             <tr>
-                <td>Chemokine Panels</td>
-                <td>Eotaxin-3</td>
-            </tr>
-             <tr>
-                <td>Chemokine Panels</td>
-                <td>TARC</td>
-            </tr>
-             <tr>
-                <td>Chemokine Panels</td>
-                <td>MIP-1α</td>
-            </tr>
-             <tr>
-                <td>Chemokine Panels</td>
-                <td>MIP-1β</td>
-            </tr>
-             <tr>
-                <td>Chemokine Panels</td>
-                <td>IL-8</td>
-            </tr>
-            <tr id="neuro">
-                <td>Neuroinflammation <br>and Alzheimers Disease</td>
-                <td>Aβ38 (6E10 or 4G8)</td>
-            </tr>
-             <tr>
-                <td>Neuroinflammation <br>and Alzheimers Disease</td>
-                <td>Aβ40 (6E10 or 4G8)</td>
-            </tr>
-             <tr>
-                <td>Neuroinflammation <br>and Alzheimers Disease</td>
-                <td>Aβ42 (6E10 or 4G8)</td>
-            </tr>
-             <tr>
-                <td>Neuroinflammation <br>and Alzheimers Disease</td>
-                <td>CRP</td>
-            </tr>
-             <tr>
-                <td>Neuroinflammation <br>and Alzheimers Disease</td>
-                <td>FGF</td>
-            </tr>
-             <tr>
-                <td>Neuroinflammation <br>and Alzheimers Disease</td>
-                <td>VEGFR-1</td>
-            </tr>
-             <tr>
-                <td>Neuroinflammation <br>and Alzheimers Disease</td>
-                <td>ICAM-1</td>
-            </tr>
-             <tr>
-                <td>Neuroinflammation <br>and Alzheimers Disease</td>
-                <td>PIGF</td>
-            </tr>
-             <tr>
-                <td>Neuroinflammation <br>and Alzheimers Disease</td>
-                <td>SAA</td>
-            </tr>
-             <tr>
-                <td>Neuroinflammation <br>and Alzheimers Disease</td>
-                <td>Tie-2</td>
-            </tr>
-             <tr>
-                <td>Neuroinflammation <br>and Alzheimers Disease</td>
-                <td>VCAM-1</td>
-            </tr>
-             <tr>
-                <td>Neuroinflammation <br>and Alzheimers Disease</td>
-                <td>VEGF-A</td>
-            </tr>
-            <tr>
-                <td>Neuroinflammation <br>and Alzheimers Disease</td>
-                <td>VEGF-C</td>
-            </tr>
-            <tr>
-                <td>Neuroinflammation <br>and Alzheimers Disease</td>
-                <td>VEGF-D</td>
-            </tr>
-               </table>
+                <td>IL-15</td>
+                </tr>
+                <tr>
+                    <td>Cytokine Panels</td>
+                    <td>IL-16</td>
+                </tr>
+                <tr>
+                    <td>Cytokine Panels</td>
+                    <td>IL-17A</td>
+                </tr>
+                 <tr>
+                    <td>Cytokine Panels</td>
+                    <td>IL-1α</td>
+                </tr>
+                <tr>
+                    <td>Cytokine Panels</td>
+                    <td>IL-5</td>
+                </tr>
+                 <tr>
+                    <td>Cytokine Panels</td>
+                    <td>IL-7</td>
+                </tr>
+                 <tr>
+                    <td>Cytokine Panels</td>
+                    <td>VEGF-A</td>
+                </tr>
+                <tr>
+                    <td>Cytokine Panels</td>
+                    <td>IL-17A/F, B, C, D</td>
+                </tr>
+                <tr>
+                    <td>Cytokine Panels</td>
+                    <td>IL-1RA</td>
+                </tr>
+                <tr>
+                    <td>Cytokine Panels</td>
+                    <td>IL-3</td>
+                </tr>
+                  <tr>
+                    <td>Cytokine Panels</td>
+                    <td>IL-9</td>
+                </tr>
+                 <tr id="chem">
+                    <td>Chemokine Panels</td>
+                    <td>MCP-1</td>
+                </tr>
+                 <tr>
+                    <td>Chemokine Panels</td>
+                    <td>MCP-4</td>
+                </tr>
+                 <tr>
+                    <td>Chemokine Panels</td>
+                    <td>Eotaxin</td>
+                </tr>
+                 <tr>
+                    <td>Chemokine Panels</td>
+                    <td>IP-10</td>
+                </tr>
+                 <tr>
+                    <td>Chemokine Panels</td>
+                    <td>MDC</td>
+                </tr>
+                 <tr>
+                    <td>Chemokine Panels</td>
+                    <td>Eotaxin-3</td>
+                </tr>
+                 <tr>
+                    <td>Chemokine Panels</td>
+                    <td>TARC</td>
+                </tr>
+                 <tr>
+                    <td>Chemokine Panels</td>
+                    <td>MIP-1α</td>
+                </tr>
+                 <tr>
+                    <td>Chemokine Panels</td>
+                    <td>MIP-1β</td>
+                </tr>
+                 <tr>
+                    <td>Chemokine Panels</td>
+                    <td>IL-8</td>
+                </tr>
+                <tr id="neuro">
+                    <td>Neuroinflammation <br>and Alzheimers Disease</td>
+                    <td>Aβ38 (6E10 or 4G8)</td>
+                </tr>
+                 <tr>
+                    <td>Neuroinflammation <br>and Alzheimers Disease</td>
+                    <td>Aβ40 (6E10 or 4G8)</td>
+                </tr>
+                 <tr>
+                    <td>Neuroinflammation <br>and Alzheimers Disease</td>
+                    <td>Aβ42 (6E10 or 4G8)</td>
+                </tr>
+                 <tr>
+                    <td>Neuroinflammation <br>and Alzheimers Disease</td>
+                    <td>CRP</td>
+                </tr>
+                 <tr>
+                    <td>Neuroinflammation <br>and Alzheimers Disease</td>
+                    <td>FGF</td>
+                </tr>
+                 <tr>
+                    <td>Neuroinflammation <br>and Alzheimers Disease</td>
+                    <td>VEGFR-1</td>
+                </tr>
+                 <tr>
+                    <td>Neuroinflammation <br>and Alzheimers Disease</td>
+                    <td>ICAM-1</td>
+                </tr>
+                 <tr>
+                    <td>Neuroinflammation <br>and Alzheimers Disease</td>
+                    <td>PIGF</td>
+                </tr>
+                 <tr>
+                    <td>Neuroinflammation <br>and Alzheimers Disease</td>
+                    <td>SAA</td>
+                </tr>
+                 <tr>
+                    <td>Neuroinflammation <br>and Alzheimers Disease</td>
+                    <td>Tie-2</td>
+                </tr>
+                 <tr>
+                    <td>Neuroinflammation <br>and Alzheimers Disease</td>
+                    <td>VCAM-1</td>
+                </tr>
+                 <tr>
+                    <td>Neuroinflammation <br>and Alzheimers Disease</td>
+                    <td>VEGF-A</td>
+                </tr>
+                <tr>
+                    <td>Neuroinflammation <br>and Alzheimers Disease</td>
+                    <td>VEGF-C</td>
+                </tr>
+                <tr>
+                    <td>Neuroinflammation <br>and Alzheimers Disease</td>
+                    <td>VEGF-D</td>
+                </tr>
+                   </table>
+    </main>
 </body>
 <script>
     function myFunction () {
@@ -564,72 +580,72 @@ tr:nth-child(odd) {
   }
 }
     
-   function metaToggle() {
-        var x = document.getElementsByClassName("meta");
-        for (let i = 0; i < x.length; i++) {
-            x[i].classList.toggle("hidden");
-        }
-    }
-     function sysToggle() {
-        var y = document.getElementsByClassName("sysmex");
-        for (let i = 0; i < y.length; i++) {
-            y[i].classList.toggle("hidden");
-        }
-    }
-     function pathToggle() {
-        var z = document.getElementsByClassName("pathfast");
-        for (let i = 0; i < z.length; i++) {
-            z[i].classList.toggle("hidden");
-        }
-    }
-        function elisaToggle() {
-        var a = document.getElementsByClassName("elisa");
-        for (let i = 0; i < a.length; i++) {
-            a[i].classList.toggle("hidden");
-        }
-    }
+//    function metaToggle() {
+//         var x = document.getElementsByClassName("meta");
+//         for (let i = 0; i < x.length; i++) {
+//             x[i].classList.toggle("hidden");
+//         }
+//     }
+//      function sysToggle() {
+//         var y = document.getElementsByClassName("sysmex");
+//         for (let i = 0; i < y.length; i++) {
+//             y[i].classList.toggle("hidden");
+//         }
+//     }
+//      function pathToggle() {
+//         var z = document.getElementsByClassName("pathfast");
+//         for (let i = 0; i < z.length; i++) {
+//             z[i].classList.toggle("hidden");
+//         }
+//     }
+//         function elisaToggle() {
+//         var a = document.getElementsByClassName("elisa");
+//         for (let i = 0; i < a.length; i++) {
+//             a[i].classList.toggle("hidden");
+//         }
+//     }
 
-        function metaScroll() {
-            const ms = document.getElementById("met");
-            ms.scrollIntoView();
-        }
+//         function metaScroll() {
+//             const ms = document.getElementById("met");
+//             ms.scrollIntoView();
+//         }
         
-        function sysScroll() {
-            const ss = document.getElementById("sys");
-            ss.scrollIntoView();
-        }
-        function pathScroll() {
-            const ps = document.getElementById("path");
-            ps.scrollIntoView();
-        }
-        function elisScroll() {
-            const es = document.getElementById("elis");
-            es.scrollIntoView();
-        }
+//         function sysScroll() {
+//             const ss = document.getElementById("sys");
+//             ss.scrollIntoView();
+//         }
+//         function pathScroll() {
+//             const ps = document.getElementById("path");
+//             ps.scrollIntoView();
+//         }
+//         function elisScroll() {
+//             const es = document.getElementById("elis");
+//             es.scrollIntoView();
+//         }
 
-        function miaScroll() {
-            const mis = document.getElementById("MIA");
-            mis.scrollIntoView();
-        }
+//         function miaScroll() {
+//             const mis = document.getElementById("MIA");
+//             mis.scrollIntoView();
+//         }
 
-        function viralScroll() {
-            const vs = document.getElementById("viral");
-            vs.scrollIntoView();
-        }
+//         function viralScroll() {
+//             const vs = document.getElementById("viral");
+//             vs.scrollIntoView();
+//         }
 
-        function cytoScroll() {
-            const cs = document.getElementById("cyto");
-            cs.scrollIntoView();
-        }
+//         function cytoScroll() {
+//             const cs = document.getElementById("cyto");
+//             cs.scrollIntoView();
+//         }
 
-        function chemScroll () {
-            const cms = document.getElementById("chem");
-            cms.scrollIntoView();
-        }
+//         function chemScroll () {
+//             const cms = document.getElementById("chem");
+//             cms.scrollIntoView();
+//         }
 
-        function neuroScroll() {
-            const ns = document.getElementById("neuro");
-            ns.scrollIntoView();
-        }
+//         function neuroScroll() {
+//             const ns = document.getElementById("neuro");
+//             ns.scrollIntoView();
+//         }
 </script>
 </html>
